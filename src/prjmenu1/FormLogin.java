@@ -1,25 +1,30 @@
 package prjmenu1;
 
 import javax.swing.JOptionPane;
-
 public class FormLogin extends javax.swing.JDialog 
 {
+    
+ classeGetSet abc = new classeGetSet();
     public FormLogin() 
     {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnEntrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtSenha = new javax.swing.JTextField();
         txtUsuario = new javax.swing.JTextField();
         lblLogin = new javax.swing.JLabel();
+        txtSenhaPass = new javax.swing.JPasswordField();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Login");
@@ -28,7 +33,8 @@ public class FormLogin extends javax.swing.JDialog
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCancelar.setBackground(new java.awt.Color(204, 204, 204));
+        btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
+        btnCancelar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorderPainted(false);
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -36,9 +42,10 @@ public class FormLogin extends javax.swing.JDialog
                 btnCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 80, 20));
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 100, 30));
 
-        btnEntrar.setBackground(new java.awt.Color(204, 204, 204));
+        btnEntrar.setBackground(new java.awt.Color(240, 141, 60));
+        btnEntrar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnEntrar.setText("Entrar");
         btnEntrar.setBorderPainted(false);
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -46,26 +53,33 @@ public class FormLogin extends javax.swing.JDialog
                 btnEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 80, 20));
+        getContentPane().add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 100, 30));
 
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel1.setText("Usuário");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 60, 20));
 
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel2.setText("Senha");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 60, 20));
-        getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 140, -1));
 
-        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sblendersOrangeBlack.png"))); // NOI18N
-        getContentPane().add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 130, 60));
+        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sblendersOrangeBlack.jpeg"))); // NOI18N
+        getContentPane().add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 60, 60));
+        getContentPane().add(txtSenhaPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
 
         setBounds(0, 0, 280, 191);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        if(txtUsuario.getText().equals("1") && txtSenha.getText().equals("1"))
+
+        
+        
+        if(txtUsuario.getText().equals("1") && txtSenhaPass.getText().equals("1"))
         {
+            abc.setNome("jjjjj");
            FormPrincipal f1 = new FormPrincipal();
+           
            // f1.setExtendedState(f1.MAXIMIZED_BOTH); //maximiza o form Principal
             f1.setVisible(true); //antigamente era show();
             dispose();
@@ -99,8 +113,10 @@ public class FormLogin extends javax.swing.JDialog
     private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JTextField txtSenha;
+    private javax.swing.JPasswordField txtSenhaPass;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

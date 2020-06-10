@@ -50,7 +50,9 @@ public class frmEditarAgente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 102, 0));
 
+        jPanel1.setBackground(new java.awt.Color(240, 141, 60));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -59,7 +61,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
         btnBuscar.setBackground(new java.awt.Color(204, 204, 204));
         btnBuscar.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         btnBuscar.setText("BUSCAR");
-        btnBuscar.setBorderPainted(false);
+        btnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
@@ -75,9 +77,9 @@ public class frmEditarAgente extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(btnBuscar)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,10 +88,11 @@ public class frmEditarAgente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(240, 141, 60));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setText("ID");
@@ -168,12 +171,13 @@ public class frmEditarAgente extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
+        jPanel3.setBackground(new java.awt.Color(240, 141, 60));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnExcluir.setBackground(new java.awt.Color(204, 204, 204));
         btnExcluir.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        btnExcluir.setText("EXCLUIR");
-        btnExcluir.setBorderPainted(false);
+        btnExcluir.setText("ATIVAR/INATIVAR");
+        btnExcluir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -183,7 +187,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
         btnSalvar.setBackground(new java.awt.Color(204, 204, 204));
         btnSalvar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnSalvar.setText("SALVAR");
-        btnSalvar.setBorderPainted(false);
+        btnSalvar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -193,7 +197,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
         btnFechar.setBackground(new java.awt.Color(255, 51, 51));
         btnFechar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnFechar.setText("FECHAR");
-        btnFechar.setBorderPainted(false);
+        btnFechar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFecharActionPerformed(evt);
@@ -288,7 +292,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-       JOptionPane.showMessageDialog(null,"tem certeza que deseja excluir");
+       JOptionPane.showMessageDialog(null,"ATIVO OU INATIVO");  
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed

@@ -5,6 +5,8 @@
  */
 package prjmenu1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lucas
@@ -54,9 +56,9 @@ public class pnMenufunc extends javax.swing.JPanel {
         jButton3.setText("procurar");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton4.setBackground(new java.awt.Color(255, 153, 0));
+        jButton4.setBackground(new java.awt.Color(240, 141, 60));
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton4.setText("cadastrar novo funcionario");
+        jButton4.setText("cadastrar funcionario");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,12 +66,17 @@ public class pnMenufunc extends javax.swing.JPanel {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 153, 0));
+        jButton5.setBackground(new java.awt.Color(240, 141, 60));
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton5.setText("editar funcionario");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
-        jButton6.setBackground(new java.awt.Color(255, 153, 0));
+        jButton6.setBackground(new java.awt.Color(240, 141, 60));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton6.setText("procurar");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -79,8 +86,8 @@ public class pnMenufunc extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
@@ -95,7 +102,7 @@ public class pnMenufunc extends javax.swing.JPanel {
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -104,8 +111,20 @@ public class pnMenufunc extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null,"Para cadastrar um novo funcionário será preciso criar um novo agente");
+       
+       frmCadAgenteFunc f1 = new frmCadAgenteFunc();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         frmEditarFunc f1 = new frmEditarFunc();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
