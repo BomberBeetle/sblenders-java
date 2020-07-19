@@ -1,6 +1,9 @@
 package prjmenu1;
 
 import javax.swing.JOptionPane;
+import classeConexao.ClasseConexaoJava;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 public class FormLogin extends javax.swing.JDialog 
 {
     
@@ -70,26 +73,54 @@ public class FormLogin extends javax.swing.JDialog
 
         setBounds(0, 0, 280, 191);
     }// </editor-fold>//GEN-END:initComponents
-
+        ClasseConexaoJava con;
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-
-        
-        
-        if(txtUsuario.getText().equals("1") && txtSenhaPass.getText().equals("1"))
-        {
-            abc.setNome("jjjjj");
-           FormPrincipal f1 = new FormPrincipal();
+           con = new ClasseConexaoJava();
+           boolean resultado = con.conectar();
+        if (resultado == true){
+            try{
+                    PreparedStatement patmt = con.getConn().prepareStatement("select * from tbFuncionario where tipoFuncionarioID = 2 and agenteID = (select agenteID  from tbAgente where agenteLogin = ? and agenteSenha= ?) ");
+                patmt.setString(1,txtUsuario.getText().trim());
+                patmt.setString(2,txtSenhaPass.getText().trim());
+                ResultSet rs = patmt.executeQuery();
+                int contar = 0;
+                while (rs.next()){
+                    contar++;
+                }
+                if(contar > 0){
+                    FormPrincipal f1 = new FormPrincipal();
            
-           // f1.setExtendedState(f1.MAXIMIZED_BOTH); //maximiza o form Principal
-            f1.setVisible(true); //antigamente era show();
-            dispose();
+                          // f1.setExtendedState(f1.MAXIMIZED_BOTH); //maximiza o form Principal
+                        f1.setVisible(true); //antigamente era show();
+                        dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido");
+                }
+                    /*if(txtUsuario.getText().equals("1") && txtSenhaPass.getText().equals("1"))
+                     {
+                     abc.setNome("jjjjj");
+                         FormPrincipal f1 = new FormPrincipal();
+           
+                          // f1.setExtendedState(f1.MAXIMIZED_BOTH); //maximiza o form Principal
+                        f1.setVisible(true); //antigamente era show();
+                        dispose();
+                       }
+                       else
+                    {
+                             JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido");
+                         }*/
+                 }
+            catch (Exception erro){
+                JOptionPane.showMessageDialog(null, "Conexão falhou");
+                 }
         }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválido");
+        else{
+            JOptionPane.showMessageDialog(null, "Consulta a tablea falhou");
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
-
+    
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnCancelarActionPerformed

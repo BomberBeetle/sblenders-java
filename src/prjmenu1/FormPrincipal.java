@@ -185,7 +185,7 @@ int AuxEdit = 1;
                 painelBotoes.add(painelA);
                 painelBotoes.revalidate();
                 painelBotoes.setVisible(true);
-                lblBemVindo.setText(lblBemVindo.getText()+""+ x);
+              
        }
        
        

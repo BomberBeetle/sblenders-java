@@ -111,9 +111,14 @@ public class pnMenufunc extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       JOptionPane.showMessageDialog(null,"Para cadastrar um novo funcionário será preciso criar um novo agente");
+      /* JOptionPane.showMessageDialog(null,"Para cadastrar um novo funcionário será preciso criar um novo agente");
        
        frmCadAgenteFunc f1 = new frmCadAgenteFunc();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
+*/
+       frmCadFuncionario f1 = new frmCadFuncionario();
               //  f1.setModal(true);
                 f1.setLocationRelativeTo(null); //Centraliza o frmLogin
                 f1.setVisible(true);
