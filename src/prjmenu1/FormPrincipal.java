@@ -48,6 +48,11 @@ int AuxEdit = 1;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setSize(new java.awt.Dimension(700, 700));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         btnSair.setBackground(new java.awt.Color(255, 51, 51));
         btnSair.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -60,7 +65,7 @@ int AuxEdit = 1;
             }
         });
 
-        caixaUm.setBackground(new java.awt.Color(240, 141, 60));
+        caixaUm.setBackground(new java.awt.Color(247, 176, 54));
         caixaUm.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         caixaUm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AGENTE", "FUNCIONARIO", "TOTEM", "CLIENTE ONLINE" }));
         caixaUm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -73,7 +78,7 @@ int AuxEdit = 1;
             }
         });
 
-        caixaUm1.setBackground(new java.awt.Color(240, 141, 60));
+        caixaUm1.setBackground(new java.awt.Color(247, 176, 54));
         caixaUm1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         caixaUm1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PEDIDO", "FILTRAR PEDIDOS", "ESTATÍSTICAS", " " }));
         caixaUm1.setBorder(null);
@@ -84,7 +89,7 @@ int AuxEdit = 1;
             }
         });
 
-        caixaUm2.setBackground(new java.awt.Color(240, 141, 60));
+        caixaUm2.setBackground(new java.awt.Color(247, 176, 54));
         caixaUm2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         caixaUm2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PRODUTO", "INGREDIENTES", " ", " " }));
         caixaUm2.setBorder(null);
@@ -95,7 +100,7 @@ int AuxEdit = 1;
             }
         });
 
-        caixaUm3.setBackground(new java.awt.Color(240, 141, 60));
+        caixaUm3.setBackground(new java.awt.Color(247, 176, 54));
         caixaUm3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         caixaUm3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RESTAURANTE", "ESTATÍSTICAS", " ", " " }));
         caixaUm3.setBorder(null);
@@ -185,7 +190,7 @@ int AuxEdit = 1;
                 painelBotoes.add(painelA);
                 painelBotoes.revalidate();
                 painelBotoes.setVisible(true);
-                lblBemVindo.setText(lblBemVindo.getText()+""+ x);
+              
        }
        
        
@@ -251,6 +256,12 @@ int AuxEdit = 1;
     private void caixaUm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caixaUm3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_caixaUm3ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    // lblBemVindo.setText(lblBemVindo.getText()+abc.getNome());
+        
+        
+    }//GEN-LAST:event_formWindowOpened
  
     
     

@@ -14,7 +14,7 @@ public class classeGetSet {
     
     
      public void setNome(String nomeproduto) {
-     this.nomeusuario = nomeproduto;
+    nomeusuario = nomeproduto;
 }
      
     public String getNome() {

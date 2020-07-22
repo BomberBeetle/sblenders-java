@@ -56,7 +56,7 @@ public class pnMenuTotem extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(853, 441));
 
-        jButton7.setBackground(new java.awt.Color(240, 141, 60));
+        jButton7.setBackground(new java.awt.Color(247, 176, 54));
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton7.setText("cadastrar novo totem");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -66,12 +66,17 @@ public class pnMenuTotem extends javax.swing.JPanel {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(240, 141, 60));
+        jButton8.setBackground(new java.awt.Color(247, 176, 54));
         jButton8.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton8.setText("editar totem");
         jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
-        jButton9.setBackground(new java.awt.Color(240, 141, 60));
+        jButton9.setBackground(new java.awt.Color(247, 176, 54));
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton9.setText("procurar");
         jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -106,8 +111,18 @@ public class pnMenuTotem extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+         frmCadTotem f1 = new frmCadTotem();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        frmEditarTotem f1 = new frmEditarTotem();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

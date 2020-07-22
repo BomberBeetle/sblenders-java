@@ -42,7 +42,7 @@ public class frmProcAgente extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jLabel2.setText("PROCURAR");
 
-        jPanel1.setBackground(new java.awt.Color(240, 141, 60));
+        jPanel1.setBackground(new java.awt.Color(247, 176, 54));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N

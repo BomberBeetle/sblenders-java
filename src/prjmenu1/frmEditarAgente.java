@@ -52,7 +52,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 102, 0));
 
-        jPanel1.setBackground(new java.awt.Color(240, 141, 60));
+        jPanel1.setBackground(new java.awt.Color(247, 176, 54));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -92,7 +92,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(240, 141, 60));
+        jPanel2.setBackground(new java.awt.Color(247, 176, 54));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setText("ID");
@@ -171,7 +171,7 @@ public class frmEditarAgente extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        jPanel3.setBackground(new java.awt.Color(240, 141, 60));
+        jPanel3.setBackground(new java.awt.Color(247, 176, 54));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnExcluir.setBackground(new java.awt.Color(204, 204, 204));

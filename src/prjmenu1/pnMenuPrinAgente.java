@@ -31,7 +31,7 @@ public class pnMenuPrinAgente extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        jButton1.setBackground(new java.awt.Color(240, 141, 60));
+        jButton1.setBackground(new java.awt.Color(247, 176, 54));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton1.setText("cadastrar novo agente");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -41,7 +41,7 @@ public class pnMenuPrinAgente extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(240, 141, 60));
+        jButton2.setBackground(new java.awt.Color(247, 176, 54));
         jButton2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton2.setText("editar agente");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -51,7 +51,7 @@ public class pnMenuPrinAgente extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(240, 141, 60));
+        jButton3.setBackground(new java.awt.Color(247, 176, 54));
         jButton3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton3.setText("procurar");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

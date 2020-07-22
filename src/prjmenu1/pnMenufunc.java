@@ -56,7 +56,7 @@ public class pnMenufunc extends javax.swing.JPanel {
         jButton3.setText("procurar");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton4.setBackground(new java.awt.Color(240, 141, 60));
+        jButton4.setBackground(new java.awt.Color(247, 176, 54));
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton4.setText("cadastrar funcionario");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -66,7 +66,7 @@ public class pnMenufunc extends javax.swing.JPanel {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(240, 141, 60));
+        jButton5.setBackground(new java.awt.Color(247, 176, 54));
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton5.setText("editar funcionario");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -76,10 +76,15 @@ public class pnMenufunc extends javax.swing.JPanel {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(240, 141, 60));
+        jButton6.setBackground(new java.awt.Color(247, 176, 54));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton6.setText("procurar");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -111,9 +116,14 @@ public class pnMenufunc extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       JOptionPane.showMessageDialog(null,"Para cadastrar um novo funcionário será preciso criar um novo agente");
+      /* JOptionPane.showMessageDialog(null,"Para cadastrar um novo funcionário será preciso criar um novo agente");
        
        frmCadAgenteFunc f1 = new frmCadAgenteFunc();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
+*/
+       frmCadFuncionario f1 = new frmCadFuncionario();
               //  f1.setModal(true);
                 f1.setLocationRelativeTo(null); //Centraliza o frmLogin
                 f1.setVisible(true);
@@ -125,6 +135,13 @@ public class pnMenufunc extends javax.swing.JPanel {
                 f1.setLocationRelativeTo(null); //Centraliza o frmLogin
                 f1.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+         frmProcFunc f1 = new frmProcFunc();
+              //  f1.setModal(true);
+                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
+                f1.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
