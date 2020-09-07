@@ -41,7 +41,6 @@ classeGetSet abc = new classeGetSet();
         btnClienteOnline = new javax.swing.JButton();
         btnTotem = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        btnFiltrarPedidos = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         btnRestaurante = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -214,6 +213,11 @@ classeGetSet abc = new classeGetSet();
                 btnClienteOnlineMouseExited(evt);
             }
         });
+        btnClienteOnline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteOnlineActionPerformed(evt);
+            }
+        });
 
         btnTotem.setBackground(new java.awt.Color(204, 204, 204));
         btnTotem.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -230,30 +234,14 @@ classeGetSet abc = new classeGetSet();
                 btnTotemMouseExited(evt);
             }
         });
+        btnTotem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTotemActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setText("PEDIDO");
-
-        btnFiltrarPedidos.setBackground(new java.awt.Color(204, 204, 204));
-        btnFiltrarPedidos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnFiltrarPedidos.setForeground(new java.awt.Color(51, 51, 51));
-        btnFiltrarPedidos.setText("FILTRAR PEDIDOS");
-        btnFiltrarPedidos.setActionCommand("");
-        btnFiltrarPedidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnFiltrarPedidos.setBorderPainted(false);
-        btnFiltrarPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnFiltrarPedidosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnFiltrarPedidosMouseExited(evt);
-            }
-        });
-        btnFiltrarPedidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFiltrarPedidosActionPerformed(evt);
-            }
-        });
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel11.setText("PRODUTO");
@@ -333,7 +321,6 @@ classeGetSet abc = new classeGetSet();
             .addComponent(btnPedidoEstatiscas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnClienteOnline, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnTotem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnFiltrarPedidos, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
             .addComponent(btnProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnRestaurante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -364,27 +351,25 @@ classeGetSet abc = new classeGetSet();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnFiltrarPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPedidoEstatiscas, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRestauranteEstatisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 670));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 630));
 
         pnConteudo.setBackground(new java.awt.Color(255, 255, 255));
         pnConteudo.setLayout(new java.awt.CardLayout());
@@ -405,19 +390,31 @@ classeGetSet abc = new classeGetSet();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoActionPerformed
-        // TODO add your handling code here:
+           pnPedido painel = new pnPedido();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
     }//GEN-LAST:event_btnPedidoActionPerformed
 
     private void btnPedidoEstatiscasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoEstatiscasActionPerformed
-        // TODO add your handling code here:
+      pnPedidoEstatistica painel = new pnPedidoEstatistica();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
     }//GEN-LAST:event_btnPedidoEstatiscasActionPerformed
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
-        // TODO add your handling code here:
+         pnProduto painel = new pnProduto();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
     }//GEN-LAST:event_btnProdutoActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncionarioMouseEntered
@@ -428,20 +425,28 @@ classeGetSet abc = new classeGetSet();
      btnFuncionario.setBackground(new java.awt.Color(204,204,204));
     }//GEN-LAST:event_btnFuncionarioMouseExited
 
-    private void btnFiltrarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarPedidosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFiltrarPedidosActionPerformed
-
     private void btnRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestauranteActionPerformed
-        // TODO add your handling code here:
+       pnRestaurante painel = new pnRestaurante();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
     }//GEN-LAST:event_btnRestauranteActionPerformed
 
     private void btnRestauranteEstatisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestauranteEstatisticasActionPerformed
-        // TODO add your handling code here:
+        pnRestauranteEstatistica painel = new pnRestauranteEstatistica();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
     }//GEN-LAST:event_btnRestauranteEstatisticasActionPerformed
 
     private void btnIngredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngredientesActionPerformed
-        // TODO add your handling code here:
+        pnIngredientes painel = new pnIngredientes();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
     }//GEN-LAST:event_btnIngredientesActionPerformed
 
     private void btnTotemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTotemMouseEntered
@@ -467,14 +472,6 @@ classeGetSet abc = new classeGetSet();
     private void btnPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMouseExited
       btnPedido.setBackground(new java.awt.Color(204,204,204));
     }//GEN-LAST:event_btnPedidoMouseExited
-
-    private void btnFiltrarPedidosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltrarPedidosMouseEntered
-       btnFiltrarPedidos.setBackground(new java.awt.Color(240,141,60));
-    }//GEN-LAST:event_btnFiltrarPedidosMouseEntered
-
-    private void btnFiltrarPedidosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltrarPedidosMouseExited
-        btnFiltrarPedidos.setBackground(new java.awt.Color(204,204,204));
-    }//GEN-LAST:event_btnFiltrarPedidosMouseExited
 
     private void btnPedidoEstatiscasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoEstatiscasMouseEntered
         btnPedidoEstatiscas.setBackground(new java.awt.Color(240,141,60));
@@ -536,6 +533,25 @@ classeGetSet abc = new classeGetSet();
        lblBemVindo.setText(lblBemVindo.getText()+abc.getNome());
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnTotemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotemActionPerformed
+        
+         pnMenuTotem painel = new pnMenuTotem();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnTotemActionPerformed
+
+    private void btnClienteOnlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteOnlineActionPerformed
+         pnMenuClienteOnline painel = new pnMenuClienteOnline();
+         pnConteudo.removeAll();
+                pnConteudo.add(painel);
+                pnConteudo.revalidate();
+                pnConteudo.setVisible(true);
+    }//GEN-LAST:event_btnClienteOnlineActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -573,7 +589,6 @@ classeGetSet abc = new classeGetSet();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClienteOnline;
-    private javax.swing.JButton btnFiltrarPedidos;
     private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnIngredientes;
     private javax.swing.JButton btnPedido;
