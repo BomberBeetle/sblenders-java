@@ -10,14 +10,14 @@ package Principal;
  * @author lucas
  */
 public class classeGetSet {
-   private String nomeusuario;
+   private static String nomeusuario;
     
     
-     public void setNome(String nomeproduto) {
-    this.nomeusuario = nomeproduto;
+     public static void setNome(String nomeproduto) {
+    nomeusuario = nomeproduto;
 }
      
-    public String getNome() {
+    public static String getNome() {
     return nomeusuario;
 }
 }

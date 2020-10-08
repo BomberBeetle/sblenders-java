@@ -5,7 +5,22 @@
  */
 package Principal;
 
-import javax.swing.JOptionPane;
+import classeConexao.ClasseConexaoJava;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.util.JRSaver;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 
 /**
  *
@@ -139,10 +154,35 @@ public class pnMenufunc extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-         frmProcFunc f1 = new frmProcFunc();
-              //  f1.setModal(true);
-                f1.setLocationRelativeTo(null); //Centraliza o frmLogin
-                f1.setVisible(true);
+       
+        
+     //   String nomeArq = "C:\\Users\\lucas\\OneDrive\\Documents\\TCC\\sblenders-java\\src\\relatorios\\Coffee.jrxml";
+        try {
+            ClasseConexaoJava con = new  ClasseConexaoJava();
+            boolean resultado = con.conectar();
+        if (resultado == true){
+            JasperDesign jdesign = JRXmlLoader.load("C:\\Users\\lucas\\OneDrive\\Documents\\TCC\\sblenders-java\\src\\Principal\\teste1.jrxml");
+            String query = "select funcionarioID, funcionarioNome  from tbFuncionario";
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jdesign.setQuery(updateQuery);
+            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
+            JasperViewer.viewReport(jprint);
+            /*
+            JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
+            JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");
+            */
+        }
+        } catch (JRException ex) {
+            Logger.getLogger(pnMenufunc.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+  
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
 

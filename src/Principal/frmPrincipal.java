@@ -5,6 +5,13 @@
  */
 package Principal;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author lucas
@@ -530,7 +537,18 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       lblBemVindo.setText(lblBemVindo.getText()+abc.getNome());
+      
+        String imagePath = "path/to/your/image.jpg";
+        try {
+            BufferedImage myPicture = ImageIO.read(new File(imagePath));
+        } catch (IOException ex) {
+            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        
+        lblBemVindo.setText(lblBemVindo.getText()+classeGetSet.getNome().toUpperCase());
     }//GEN-LAST:event_formWindowOpened
 
     private void btnTotemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotemActionPerformed

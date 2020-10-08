@@ -326,7 +326,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    String situacao ;
     ClasseConexaoJava con;
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
@@ -345,10 +345,17 @@ public class frmEditarFunc extends javax.swing.JFrame {
                         txtId.setText(r.getString(1));
                         txtTipoFunc.setText(r.getString(2));
                         txtCodAge.setText(r.getString(3));
-                        txtSituacao.setText(r.getString(4));
+                        situacao = r.getString(4);
                         txtNome.setText(r.getString(5));
                         txtRg.setText(r.getString(6));
                         txtCodRes.setText(r.getString(8));
+                        if (situacao.equals("1")){
+            txtSituacao.setText("Ativo");
+        }
+        else {
+            txtSituacao.setText("Inativo");
+        }
+                        
                   }
                 
               
@@ -376,7 +383,21 @@ public class frmEditarFunc extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        JOptionPane.showMessageDialog(null,"ATIVO OU INATIVO");
+     
+        
+         if (situacao.equals("1")){
+            txtSituacao.setText("Inativo");
+            situacao = "0";
+             JOptionPane.showMessageDialog(null, "Salve para inativar");
+        }
+      else{
+            txtSituacao.setText("Ativo");
+            situacao = "1";
+             JOptionPane.showMessageDialog(null, "Salve para ativar");
+        }
+      
+        
+        
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
@@ -391,14 +412,14 @@ public class frmEditarFunc extends javax.swing.JFrame {
                    
                 
                      patmt.setInt(1,Integer.parseInt(txtTipoFunc.getText()));
-                     patmt.setInt(2,Integer.parseInt(txtSituacao.getText()));
+                     patmt.setInt(2,Integer.parseInt(situacao));
                      patmt.setString(3,txtNome.getText().trim());
                      patmt.setString(4,txtRg.getText().trim());
                      patmt.setInt(5,Integer.parseInt(txtCodRes.getText()));
                      patmt.setInt(6,Integer.parseInt(txtId.getText()));
                      patmt.execute();
              
-                     JOptionPane.showMessageDialog(null, "Updatado com sucesso");
+                     JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
                       
                      
                         txtId.setText("");
