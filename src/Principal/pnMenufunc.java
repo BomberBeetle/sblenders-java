@@ -154,9 +154,6 @@ public class pnMenufunc extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       
-        
-     //   String nomeArq = "C:\\Users\\lucas\\OneDrive\\Documents\\TCC\\sblenders-java\\src\\relatorios\\Coffee.jrxml";
         try {
             ClasseConexaoJava con = new  ClasseConexaoJava();
             boolean resultado = con.conectar();
@@ -178,6 +175,9 @@ public class pnMenufunc extends javax.swing.JPanel {
             Logger.getLogger(pnMenufunc.class.getName()).log(Level.SEVERE, null, ex);
         } 
   
+        
+   
+       
         
         
         

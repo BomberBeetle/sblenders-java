@@ -84,7 +84,7 @@ public class pnIngredientes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        frmCadTotem f1 = new frmCadTotem();
+        frmCadIngrediente f1 = new frmCadIngrediente();
         //  f1.setModal(true);
         f1.setLocationRelativeTo(null); //Centraliza o frmLogin
         f1.setVisible(true);

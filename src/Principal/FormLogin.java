@@ -3,9 +3,11 @@ package Principal;
 import javax.swing.JOptionPane;
 import classeConexao.ClasseConexaoJava;
 import java.awt.Color;
+import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 public class FormLogin extends javax.swing.JFrame
 {
     
@@ -85,7 +87,6 @@ public class FormLogin extends javax.swing.JFrame
         });
 
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sblenderMedio.jpg"))); // NOI18N
         lblLogin.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         txtSenhaPass.setBackground(new java.awt.Color(240, 240, 240));
@@ -124,8 +125,7 @@ public class FormLogin extends javax.swing.JFrame
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
@@ -155,16 +155,19 @@ public class FormLogin extends javax.swing.JFrame
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 806, 468);
+        setSize(new java.awt.Dimension(806, 468));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
        
     classeGetSet abc = new classeGetSet();
     ClasseConexaoJava con;    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       
+   
       txtUsuario.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
         txtSenhaPass.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
-       // lblLogin.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
+        
+            ImageIcon imagem = new ImageIcon(getClass().getResource("sblenderGrande.jpeg"));
+       lblLogin.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(lblLogin.getWidth(), lblLogin.getHeight(), Image.SCALE_DEFAULT)));
        
     }//GEN-LAST:event_formWindowOpened
 

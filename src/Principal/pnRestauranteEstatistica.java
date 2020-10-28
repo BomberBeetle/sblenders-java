@@ -6,6 +6,19 @@
 
 package Principal;
 
+import classeConexao.ClasseConexaoJava;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 /**
  *
  * @author lucas
@@ -33,7 +46,7 @@ public class pnRestauranteEstatistica extends javax.swing.JPanel {
 
         jButton6.setBackground(new java.awt.Color(247, 176, 54));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton6.setText("Pessoas Por Restaurante");
+        jButton6.setText("Pedidos Por Restaurante");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +86,34 @@ public class pnRestauranteEstatistica extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
+ try {
+            ClasseConexaoJava con = new  ClasseConexaoJava();
+            boolean resultado = con.conectar();
+        if (resultado == true){
+            JasperDesign jdesign = JRXmlLoader.load(getClass().getResource("testeDeGrafico.jrxml").getPath());
+            String query = "SELECT\n" +
+"	tbRest.restauranteID as \"ID do Restaurante\",\n" +
+"        tbRest.restauranteNome as \"Nome do Restaurante\",\n" +
+"	COUNT(pedidoID) as \"Número de Pedidos\"\n" +
+"FROM tbPedido AS tbPed JOIN tbRestaurante AS tbRest\n" +
+"	ON tbPed.restauranteID = tbRest.restauranteID\n" +
+"GROUP BY tbRest.restauranteID, tbRest.restauranteNome\n" +
+"ORDER BY tbRest.restauranteID ASC";
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jdesign.setQuery(updateQuery);
+            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
+            JasperViewer.viewReport(jprint);
+            /*
+            JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
+            JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");
+            */
+        }
+        } catch (JRException ex) {
+            Logger.getLogger(pnMenufunc.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+  
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed

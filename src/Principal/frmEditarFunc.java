@@ -5,12 +5,17 @@
  */
 package Principal;
 
+import DAO.DAOTipoFunc;
+import beans.tipoFuncionario;
 import javax.swing.JOptionPane;
 import classeConexao.ClasseConexaoJava;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -58,7 +63,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
         txtCodAge = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtSituacao = new javax.swing.JTextField();
-        txtTipoFunc = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,9 +226,13 @@ public class frmEditarFunc extends javax.swing.JFrame {
             }
         });
 
-        txtTipoFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoFuncActionPerformed(evt);
+        jComboBox1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jComboBox1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -242,14 +251,14 @@ public class frmEditarFunc extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(72, 72, 72)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodAge, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodRes, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTipoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtSituacao, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(txtRg, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(txtCodAge, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(txtCodRes, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -262,7 +271,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTipoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,7 +338,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
     String situacao ;
     ClasseConexaoJava con;
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-
+        
         con = new ClasseConexaoJava();
         boolean resultado = con.conectar();
         if (resultado == true){
@@ -343,7 +352,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
                   while(r.next()) {  //aqui ele pega o seu textfield e altera com o valor do banco
                       
                         txtId.setText(r.getString(1));
-                        txtTipoFunc.setText(r.getString(2));
+                  //      txtTipoFunc.setText(r.getString(2));
                         txtCodAge.setText(r.getString(3));
                         situacao = r.getString(4);
                         txtNome.setText(r.getString(5));
@@ -378,7 +387,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Conexão falhou");
         }
-        
+       // jComboBox1.
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -401,7 +410,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-
+        tipoFuncionario tipo = (tipoFuncionario) jComboBox1.getSelectedItem();
         con = new ClasseConexaoJava();
         boolean resultado = con.conectar();
         if (resultado == true){
@@ -411,7 +420,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
                    
                    
                 
-                     patmt.setInt(1,Integer.parseInt(txtTipoFunc.getText()));
+                   patmt.setInt(1,tipo.getIdFunc());
                      patmt.setInt(2,Integer.parseInt(situacao));
                      patmt.setString(3,txtNome.getText().trim());
                      patmt.setString(4,txtRg.getText().trim());
@@ -423,7 +432,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
                       
                      
                         txtId.setText("");
-                        txtTipoFunc.setText("");
+                     //   txtTipoFunc.setText("");
                         txtCodAge.setText("");
                         txtSituacao.setText("");
                         txtNome.setText("");
@@ -477,9 +486,18 @@ public class frmEditarFunc extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSituacaoActionPerformed
 
-    private void txtTipoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoFuncActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoFuncActionPerformed
+    private void jComboBox1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jComboBox1AncestorAdded
+        DAOTipoFunc dao = new DAOTipoFunc();
+        try {
+            List<tipoFuncionario> lista = dao.ListarTipoFunc();
+            jComboBox1.removeAll();
+            lista.forEach(f -> {
+                jComboBox1.addItem(f);
+            });
+        } catch (SQLException ex) {
+            Logger.getLogger(frmCadIngrediente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jComboBox1AncestorAdded
 
     /**
      * @param args the command line arguments
@@ -521,6 +539,7 @@ public class frmEditarFunc extends javax.swing.JFrame {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnFechar;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<Object> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -541,6 +560,5 @@ public class frmEditarFunc extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtRg;
     private javax.swing.JTextField txtSituacao;
-    private javax.swing.JTextField txtTipoFunc;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,10 @@
  */
 package Principal;
 
+import DAO.DAOIngrediente;
+import DAO.DAOTipoFunc;
+import beans.Ingredientes;
+import beans.tipoFuncionario;
 import javax.swing.JOptionPane;
 import classeConexao.ClasseConexaoJava;
 import java.sql.PreparedStatement;
@@ -12,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -47,7 +52,6 @@ public class frmCadFuncionario extends javax.swing.JFrame {
         txtCodRes = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtSenhaFunc = new javax.swing.JTextField();
-        txtTipoFunc = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         txtNome = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -66,7 +70,7 @@ public class frmCadFuncionario extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("ID do funcionário");
+        jLabel2.setText("Login do funcionário");
 
         txtIdFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,13 +111,16 @@ public class frmCadFuncionario extends javax.swing.JFrame {
             }
         });
 
-        txtTipoFunc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoFuncActionPerformed(evt);
+        jComboBox1.setBorder(null);
+        jComboBox1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jComboBox1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,8 +146,7 @@ public class frmCadFuncionario extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtNome)
-                    .addComponent(txtTipoFunc))
+                    .addComponent(txtNome))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -159,11 +165,9 @@ public class frmCadFuncionario extends javax.swing.JFrame {
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTipoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRgFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,26 +232,26 @@ public class frmCadFuncionario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
+                        .addGap(60, 60, 60)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(47, 47, 47)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
+                .addGap(77, 77, 77))
         );
 
         pack();
@@ -265,29 +269,15 @@ public class frmCadFuncionario extends javax.swing.JFrame {
     ClasseConexaoJava con;
     
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-
+       tipoFuncionario tipo = (tipoFuncionario) jComboBox1.getSelectedItem();
        con = new ClasseConexaoJava();
            boolean resultado = con.conectar();
         if (resultado == true){
             try{
                     PreparedStatement patmt = con.getConn().prepareStatement("INSERT INTO tbAgente(tipoAgenteID, agenteLogin, agenteSenha, agenteSalt) VALUES(2,? , ?, '0000000000000000000000000000000000000000000000000000000000000000')  INSERT INTO tbFuncionario(tipoFuncionarioID, agenteID, funcionarioNome, funcionarioRG, restauranteID, funcionarioSituacao) VALUES (?, (select agenteId from tbAgente where agenteLogin =? and agentesenha = ?), ?,? , ?, 1)");
                 patmt.setString(1,txtIdFunc.getText().trim());
-                patmt.setString(2,txtSenhaFunc.getText().trim());
-              
-                /* if(jComboBox1.getSelectedItem().equals("[Aprendiz]")){
-                     patmt.setInt(3,Integer.parseInt("3"));
-                 }
-                  if(jComboBox1.getSelectedItem().equals("[Permanente]")){
-                       patmt.setInt(3,Integer.parseInt("1"));
-                 }
-                 if(jComboBox1.getSelectedItem().equals("[Temporário]")){
-                       patmt.setInt(3,Integer.parseInt("2"));
-                 }
-                 if(jComboBox1.getSelectedItem().equals("[Terceiro]")){
-                       patmt.setInt(3,Integer.parseInt("4"));
-                 }
-                */
-               patmt.setInt(3,Integer.parseInt(txtTipoFunc.getText()));
+                patmt.setString(2,txtSenhaFunc.getText().trim());   
+             patmt.setInt(3,tipo.getIdFunc());
                 patmt.setString(4,txtIdFunc.getText().trim());
                 patmt.setString(5,txtSenhaFunc.getText().trim());
            
@@ -373,73 +363,32 @@ public class frmCadFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaFuncActionPerformed
 
-    private void txtTipoFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoFuncActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoFuncActionPerformed
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-     /*
-        int i;
-        Contato db_contato;
-    ArrayList<Contato> tabelaContato = new ArrayList<>();
-    
-    
-         con = new ClasseConexaoJava();
-           boolean resultado = con.conectar();
-        if (resultado == true){
-            try{
-                     PreparedStatement patmt = null;        
-                try {
-                    patmt = con.getConn().prepareStatement("SELECT * FROM tbTipoFuncionario ");
-                } catch (SQLException ex) {
-                    Logger.getLogger(frmCadFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                ResultSet rs = patmt.executeQuery();
-                while (rs.next()){
-                    db_contato = new Contato();
-                    db_contato.setId(Integer.parseInt(rs.getString(1)));
-                    db_contato.setNome(rs.getString(2));
-                     tabelaContato.add(db_contato);
-            }
-           
-        con.desconectar();
-         
+     
         
-        
-        
-         
-  
+     
        
-        jComboBox1.removeAllItems();
-         ArrayList<Object[]> registros = new ArrayList<>();
-        for(i=0;i<tabelaContato.size();i++){
-        db_contato = tabelaContato.get(i);
-        Object []registro ={db_contato.getNome()};
-        registros.add(registro);
-                          }
-        
-      for(i=0;i<tabelaContato.size();i++){
-          
-         String str = (String) Arrays.deepToString(registros.get(i));
-       jComboBox1.addItem(str);
-
- 
-      }
-        
-  
-          
-
-   
-        }   catch (SQLException ex) {
-                Logger.getLogger(frmCadFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        */
     }//GEN-LAST:event_formWindowOpened
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void jComboBox1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jComboBox1AncestorAdded
+       
+         DAOTipoFunc dao = new DAOTipoFunc();
+        try {
+            List<tipoFuncionario> lista = dao.ListarTipoFunc();
+            jComboBox1.removeAll();
+            lista.forEach(f -> {
+                jComboBox1.addItem(f);
+            });
+        } catch (SQLException ex) {
+            Logger.getLogger(frmCadIngrediente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_jComboBox1AncestorAdded
 
     /**
      * @param args the command line arguments
@@ -479,7 +428,7 @@ public class frmCadFuncionario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnSair;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<Object> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -494,6 +443,5 @@ public class frmCadFuncionario extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtRgFunc;
     private javax.swing.JTextField txtSenhaFunc;
-    private javax.swing.JTextField txtTipoFunc;
     // End of variables declaration//GEN-END:variables
 }

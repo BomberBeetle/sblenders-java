@@ -5,12 +5,14 @@
  */
 package Principal;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -36,7 +38,7 @@ classeGetSet abc = new classeGetSet();
 
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
         lblBemVindo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnFuncionario = new javax.swing.JButton();
@@ -68,8 +70,6 @@ classeGetSet abc = new classeGetSet();
         jPanel1.setBackground(new java.awt.Color(240, 141, 60));
         jPanel1.setForeground(new java.awt.Color(51, 51, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sblMenu.jpeg"))); // NOI18N
-
         lblBemVindo.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         lblBemVindo.setText("SEJA BEM-VINDO ");
 
@@ -78,22 +78,21 @@ classeGetSet abc = new classeGetSet();
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(lblBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 801, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(lblBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(lblBemVindo)
+                .addContainerGap(46, Short.MAX_VALUE))
+            .addComponent(lblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 110));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 110));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -386,7 +385,7 @@ classeGetSet abc = new classeGetSet();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,13 +537,9 @@ classeGetSet abc = new classeGetSet();
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
       
-        String imagePath = "path/to/your/image.jpg";
-        try {
-            BufferedImage myPicture = ImageIO.read(new File(imagePath));
-        } catch (IOException ex) {
-            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        ImageIcon imagem;
+        imagem = new ImageIcon(getClass().getResource("sblenderGrande.jpeg"));
+       lblLogin.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(lblLogin.getWidth(), lblLogin.getHeight(), Image.SCALE_DEFAULT)));
         
         
         
@@ -616,7 +611,6 @@ classeGetSet abc = new classeGetSet();
     private javax.swing.JButton btnRestauranteEstatisticas;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnTotem;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -625,6 +619,7 @@ classeGetSet abc = new classeGetSet();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblBemVindo;
+    private javax.swing.JLabel lblLogin;
     private javax.swing.JPanel pnConteudo;
     // End of variables declaration//GEN-END:variables
 }
