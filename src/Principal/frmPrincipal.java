@@ -67,7 +67,7 @@ classeGetSet abc = new classeGetSet();
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(240, 141, 60));
+        jPanel1.setBackground(new java.awt.Color(247, 176, 54));
         jPanel1.setForeground(new java.awt.Color(51, 51, 255));
 
         lblBemVindo.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -424,7 +424,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncionarioMouseEntered
- btnFuncionario.setBackground(new java.awt.Color(240,141,60));
+ btnFuncionario.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnFuncionarioMouseEntered
 
     private void btnFuncionarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFuncionarioMouseExited
@@ -456,7 +456,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnIngredientesActionPerformed
 
     private void btnTotemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTotemMouseEntered
-      btnTotem.setBackground(new java.awt.Color(240,141,60));
+      btnTotem.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnTotemMouseEntered
 
     private void btnTotemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTotemMouseExited
@@ -464,7 +464,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnTotemMouseExited
 
     private void btnClienteOnlineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteOnlineMouseEntered
-       btnClienteOnline.setBackground(new java.awt.Color(240,141,60));
+       btnClienteOnline.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnClienteOnlineMouseEntered
 
     private void btnClienteOnlineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteOnlineMouseExited
@@ -472,7 +472,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnClienteOnlineMouseExited
 
     private void btnPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMouseEntered
-        btnPedido.setBackground(new java.awt.Color(240,141,60));
+        btnPedido.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnPedidoMouseEntered
 
     private void btnPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMouseExited
@@ -480,7 +480,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnPedidoMouseExited
 
     private void btnPedidoEstatiscasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoEstatiscasMouseEntered
-        btnPedidoEstatiscas.setBackground(new java.awt.Color(240,141,60));
+        btnPedidoEstatiscas.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnPedidoEstatiscasMouseEntered
 
     private void btnPedidoEstatiscasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoEstatiscasMouseExited
@@ -488,7 +488,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnPedidoEstatiscasMouseExited
 
     private void btnProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutoMouseEntered
-         btnProduto.setBackground(new java.awt.Color(240,141,60));
+         btnProduto.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnProdutoMouseEntered
 
     private void btnProdutoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutoMouseExited
@@ -496,7 +496,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnProdutoMouseExited
 
     private void btnIngredientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngredientesMouseEntered
-         btnIngredientes.setBackground(new java.awt.Color(240,141,60));
+         btnIngredientes.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnIngredientesMouseEntered
 
     private void btnIngredientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngredientesMouseExited
@@ -504,7 +504,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnIngredientesMouseExited
 
     private void btnRestauranteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestauranteMouseEntered
-         btnRestaurante.setBackground(new java.awt.Color(240,141,60));
+         btnRestaurante.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnRestauranteMouseEntered
 
     private void btnRestauranteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestauranteMouseExited
@@ -512,7 +512,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnRestauranteMouseExited
 
     private void btnRestauranteEstatisticasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestauranteEstatisticasMouseEntered
-         btnRestauranteEstatisticas.setBackground(new java.awt.Color(240,141,60));
+         btnRestauranteEstatisticas.setBackground(new java.awt.Color(247,176,54));
     }//GEN-LAST:event_btnRestauranteEstatisticasMouseEntered
 
     private void btnRestauranteEstatisticasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestauranteEstatisticasMouseExited

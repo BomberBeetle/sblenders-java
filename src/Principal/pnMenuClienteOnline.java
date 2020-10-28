@@ -33,7 +33,7 @@ public class pnMenuClienteOnline extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(853, 441));
 
-        jButton8.setBackground(new java.awt.Color(240, 141, 60));
+        jButton8.setBackground(new java.awt.Color(247, 176, 54));
         jButton8.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton8.setText("editar cliente online");
         jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -43,7 +43,7 @@ public class pnMenuClienteOnline extends javax.swing.JPanel {
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(240, 141, 60));
+        jButton9.setBackground(new java.awt.Color(247, 176, 54));
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton9.setText("procurar");
         jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
