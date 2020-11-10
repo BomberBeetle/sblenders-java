@@ -104,7 +104,7 @@ public class pnRestauranteEstatistica extends javax.swing.JPanel {
             jdesign.setQuery(updateQuery);
             JasperReport jreport = JasperCompileManager.compileReport(jdesign);
             JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
-            JasperViewer.viewReport(jprint);
+            JasperViewer.viewReport(jprint, false);
             /*
             JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
             JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");
