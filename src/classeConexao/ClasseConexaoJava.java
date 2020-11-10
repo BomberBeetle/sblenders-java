@@ -10,6 +10,7 @@ public class ClasseConexaoJava {
     private final String caminho = "jdbc:sqlserver://localhost\\MSSQLSERVER:1433;" + "DatabaseName=dbSblenders";
     private String usuario = "sa";
     private String senha = "etesp";
+    //private String senha = "12345";
     private Connection conn;
     public boolean conectar(){
         try {

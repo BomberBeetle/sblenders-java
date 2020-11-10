@@ -59,7 +59,7 @@ public class pnMenuTotem extends javax.swing.JPanel {
 
         jButton7.setBackground(new java.awt.Color(247, 176, 54));
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton7.setText("cadastrar novo totem");
+        jButton7.setText("Cadastrar totem");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +69,7 @@ public class pnMenuTotem extends javax.swing.JPanel {
 
         jButton8.setBackground(new java.awt.Color(247, 176, 54));
         jButton8.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton8.setText("editar totem");
+        jButton8.setText("Editar");
         jButton8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class pnMenuTotem extends javax.swing.JPanel {
 
         jButton9.setBackground(new java.awt.Color(247, 176, 54));
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton9.setText("procurar");
+        jButton9.setText("Procurar");
         jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

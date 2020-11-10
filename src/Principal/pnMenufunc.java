@@ -75,7 +75,7 @@ public class pnMenufunc extends javax.swing.JPanel {
 
         jButton4.setBackground(new java.awt.Color(247, 176, 54));
         jButton4.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton4.setText("cadastrar funcionario");
+        jButton4.setText("Cadastrar funcionário");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +85,7 @@ public class pnMenufunc extends javax.swing.JPanel {
 
         jButton5.setBackground(new java.awt.Color(247, 176, 54));
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton5.setText("editar funcionario");
+        jButton5.setText("Editar");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +95,7 @@ public class pnMenufunc extends javax.swing.JPanel {
 
         jButton6.setBackground(new java.awt.Color(247, 176, 54));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton6.setText("procurar");
+        jButton6.setText("Procurar");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

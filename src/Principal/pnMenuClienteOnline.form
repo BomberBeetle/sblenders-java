@@ -54,7 +54,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="editar cliente online"/>
+        <Property name="text" type="java.lang.String" value="Editar"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>
@@ -73,7 +73,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="procurar"/>
+        <Property name="text" type="java.lang.String" value="Procurar"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>
