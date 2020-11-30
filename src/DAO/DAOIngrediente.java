@@ -36,7 +36,7 @@ ClasseConexaoJava con;
         try{
             List<Ingredientes> lista = new ArrayList<>();
             
-            String sql = "select * from tbCategoriaIngrediente";
+            String sql = "select * from tbCategoriaIngrediente order by categoriaIngredienteId";
             
             PreparedStatement patmt  = con.getConn().prepareStatement(sql);
             

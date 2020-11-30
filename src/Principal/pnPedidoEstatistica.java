@@ -45,7 +45,7 @@ public class pnPedidoEstatistica extends javax.swing.JPanel {
 
         jButton6.setBackground(new java.awt.Color(247, 176, 54));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton6.setText("Últimos Pedidos");
+        jButton6.setText("Estatisticas");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

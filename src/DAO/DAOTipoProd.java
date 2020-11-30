@@ -30,7 +30,7 @@ public class DAOTipoProd {
         try{
             List<tipoProd> lista = new ArrayList<>();
             
-            String sql = "select * from tbCategoriaProduto";
+            String sql = "select * from tbCategoriaProduto order by categoriaProdutoID";
             
             PreparedStatement patmt  = con.getConn().prepareStatement(sql);
             

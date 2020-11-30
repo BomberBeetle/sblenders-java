@@ -78,8 +78,8 @@ classeGetSet abc = new classeGetSet();
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(lblBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -379,7 +379,7 @@ classeGetSet abc = new classeGetSet();
 
         pnConteudo.setBackground(new java.awt.Color(255, 255, 255));
         pnConteudo.setLayout(new java.awt.CardLayout());
-        jPanel3.add(pnConteudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 790, 200));
+        jPanel3.add(pnConteudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 810, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

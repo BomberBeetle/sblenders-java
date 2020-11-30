@@ -2,7 +2,7 @@
 
 package Principal;
 
-public class PrjMenu1 
+public class principal 
 {
     public static void main(String[] args) 
     { 

@@ -95,7 +95,7 @@ public class pnMenufunc extends javax.swing.JPanel {
 
         jButton6.setBackground(new java.awt.Color(247, 176, 54));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton6.setText("Procurar");
+        jButton6.setText("Todos Funcionarios");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,14 +158,14 @@ public class pnMenufunc extends javax.swing.JPanel {
             ClasseConexaoJava con = new  ClasseConexaoJava();
             boolean resultado = con.conectar();
         if (resultado == true){
-            JasperDesign jdesign = JRXmlLoader.load("C:\\Users\\lucas\\OneDrive\\Documents\\TCC\\sblenders-java\\src\\Principal\\teste1.jrxml");
+            JasperDesign jdesign = JRXmlLoader.load(getClass().getResource("lista_de_funcionarios.jrxml").getPath());
             String query = "select funcionarioID, funcionarioNome  from tbFuncionario";
             JRDesignQuery updateQuery = new JRDesignQuery();
             updateQuery.setText(query);
             jdesign.setQuery(updateQuery);
             JasperReport jreport = JasperCompileManager.compileReport(jdesign);
             JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
-            JasperViewer.viewReport(jprint);
+            JasperViewer.viewReport(jprint, false);
             /*
             JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
             JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");

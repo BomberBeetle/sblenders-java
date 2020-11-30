@@ -79,7 +79,7 @@ public class pnMenuTotem extends javax.swing.JPanel {
 
         jButton9.setBackground(new java.awt.Color(247, 176, 54));
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton9.setText("Procurar");
+        jButton9.setText("Todos Totens");
         jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
