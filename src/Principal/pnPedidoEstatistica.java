@@ -84,8 +84,8 @@ public class pnPedidoEstatistica extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
-                .addGap(35, 35, 35))
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +99,44 @@ public class pnPedidoEstatistica extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+       try {
+            ClasseConexaoJava con = new  ClasseConexaoJava();
+            boolean resultado = con.conectar();
+            if (resultado == true){
+                JasperDesign jdesign = JRXmlLoader.load(getClass().getResource("ingredientesProdutos.jrxml").getPath());
+                String query = "SELECT\n" +
+"	DISTINCT(tbProd.produtoID),\n" +
+"	produtoNome,\n" +
+"	COUNT(tbPedProd.produtoID) AS \"Número de pedidos em que aparece\",\n" +
+"	ingredienteNome,\n" +
+"	COUNt(tbProdIng.ingredienteID) AS \"Número de pedidos em que aparece\"\n" +
+"FROM tbProduto AS tbProd\n" +
+"JOIN tbProdutoIngrediente AS tbProdIng\n" +
+"ON tbProd.produtoID = tbProdIng.produtoID\n" +
+"JOIN tbPedidoProduto AS tbPedProd\n" +
+"ON tbProd.produtoID = tbPedProd.produtoID\n" +
+"JOIN tbIngrediente AS tbIng\n" +
+"ON tbProdIng.ingredienteID = tbIng.ingredienteID\n" +
+"JOIN tbPedidoProdutoIngrediente AS tbPedProdIng\n" +
+"ON tbProdIng.produtoIngredienteID = tbPedProdIng.produtoIngredienteID\n" +
+"GROUP BY\n" +
+"	tbProd.produtoID,\n" +
+"	produtoNome,\n" +
+"	ingredienteNome ";
+                JRDesignQuery updateQuery = new JRDesignQuery();
+                updateQuery.setText(query);
+                jdesign.setQuery(updateQuery);
+                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
+                JasperViewer.viewReport(jprint, false);
+                /*
+                JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
+                JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");
+                */
+            }
+        } catch (JRException ex) {
+            Logger.getLogger(pnMenufunc.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
