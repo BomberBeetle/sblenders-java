@@ -196,7 +196,7 @@ public class FormLogin extends javax.swing.JFrame
         boolean resultado = con.conectar();
         if (resultado == true){
             try{
-                PreparedStatement patmt = con.getConn().prepareStatement("select * from tbFuncionario where tipoFuncionarioID = 1 and agenteID = (select agenteID  from tbAgente where agenteLogin = ? and agenteSenha= ?) ");
+                PreparedStatement patmt = con.getConn().prepareStatement("select * from tbFuncionario where tipoFuncionarioID = 5 and agenteID = (select agenteID  from tbAgente where agenteLogin = ? and agenteSenha= ?) ");
                 patmt.setString(1,txtUsuario.getText().trim());
                 patmt.setString(2, hhh.Hash(txtSenhaPass.getText(),"0000000000000000000000000000000000000000000000000000000000000000").trim());
                 ResultSet rs = patmt.executeQuery();
