@@ -163,7 +163,7 @@ public class FormLogin extends javax.swing.JFrame
        
     classeGetSet abc = new classeGetSet();
     ClasseConexaoJava con;   
-    Hashe hhh;
+   
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
    
       txtUsuario.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
@@ -191,14 +191,14 @@ public class FormLogin extends javax.swing.JFrame
     }//GEN-LAST:event_txtUsuarioFocusGained
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-       hhh = new Hashe();
+      
         con = new ClasseConexaoJava();
         boolean resultado = con.conectar();
         if (resultado == true){
             try{
                 PreparedStatement patmt = con.getConn().prepareStatement("select * from tbFuncionario where tipoFuncionarioID = 5 and agenteID = (select agenteID  from tbAgente where agenteLogin = ? and agenteSenha= ?) ");
                 patmt.setString(1,txtUsuario.getText().trim());
-                patmt.setString(2, hhh.Hash(txtSenhaPass.getText(),"0000000000000000000000000000000000000000000000000000000000000000").trim());
+                patmt.setString(2, txtSenhaPass.getText().trim());
                 ResultSet rs = patmt.executeQuery();
                  classeGetSet.setNome(txtUsuario.getText());
                 int contar = 0;
