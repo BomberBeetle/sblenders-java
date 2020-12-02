@@ -37,6 +37,9 @@ public class frmCadFuncionario extends javax.swing.JFrame {
      */
     public frmCadFuncionario() {
         initComponents();
+        
+        
+         
     }
 
     /**
@@ -446,7 +449,10 @@ public class frmCadFuncionario extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
      
-        
+       
+       
+        Imagem = new ImageIcon(getClass().getResource("Plus.png"));
+       lblImagens.setIcon(new ImageIcon(Imagem.getImage().getScaledInstance(lblImagens.getWidth(), lblImagens.getHeight(), Image.SCALE_DEFAULT)));
      
        
     }//GEN-LAST:event_formWindowOpened

@@ -40,11 +40,13 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtCodAge = new javax.swing.JTextField();
+        txtLogin = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtSituacao = new javax.swing.JTextField();
         txtSobrenome = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -78,12 +80,11 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setText("Codigo agente");
+        jLabel9.setText("Login");
 
-        txtCodAge.setEditable(false);
-        txtCodAge.addActionListener(new java.awt.event.ActionListener() {
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodAgeActionPerformed(evt);
+                txtLoginActionPerformed(evt);
             }
         });
 
@@ -104,25 +105,35 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
 
         jLabel11.setText("Sobrenome");
 
+        jLabel12.setText("Senha");
+
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(95, 95, 95)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(87, 87, 87)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodAge, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -143,12 +154,16 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodAge, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
@@ -269,7 +284,7 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,8 +299,8 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(55, 55, 55)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -313,16 +328,20 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
         if (resultado == true){
             try{
 
-                PreparedStatement patmt = con.getConn().prepareStatement("select * from tbclienteonline where ClienteOnlineId =?") ;
+                PreparedStatement patmt = con.getConn().prepareStatement("select ClienteOnlineId, tbag.agenteLogin, tbag.agenteSenha,ClienteOnlineNome, ClienteOnlineSobrenome, clienteOnlineVerificadoFlag from tbClienteOnline as tbCO\n" +
+"\n" +
+"join  tbAgente as tbAg on tbCO.agenteID = tbAg.agenteID  where ClienteOnlineId =?") ;
                 patmt.setString(1,txtIdFuncionarioBusca.getText().trim());
                 ResultSet r = patmt.executeQuery();
 
                 while(r.next()) {  //aqui ele pega o seu textfield e altera com o valor do banco
 
                     txtId.setText(r.getString(1));
-                    txtCodAge.setText(r.getString(2));
-                    txtNome.setText(r.getString(3));
-                    txtSobrenome.setText(r.getString(4));
+                    
+                    txtNome.setText(r.getString(4));
+                    txtSobrenome.setText(r.getString(5));
+                    txtLogin.setText(r.getString(2));
+                    txtSenha.setText(r.getString(3));
                     situacao = r.getString(6);
                     if (situacao.equals("1")){
             txtSituacao.setText("Ativo");
@@ -371,7 +390,7 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
         if (resultado == true){
             try{
 
-                PreparedStatement patmt = con.getConn().prepareStatement("update tbClienteOnline set clienteOnlineNome = ? , clienteOnlineSobrenome =?, clienteOnlineVerificadoFlag=? where clienteOnlineID =?") ;
+                PreparedStatement patmt = con.getConn().prepareStatement("update tbClienteOnline set clienteOnlineNome = ? , clienteOnlineSobrenome =?, clienteOnlineVerificadoFlag=? where clienteOnlineID =? update tbAgente set agenteLogin= ?, agenteSenha =? where agenteID = (select agenteID from tbClienteOnline where clienteOnlineID=?)") ;
 
 
                 patmt.setString(1,txtNome.getText().trim());
@@ -379,16 +398,21 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
                  patmt.setInt(3,Integer.parseInt(situacao));
 
                 patmt.setInt(4,Integer.parseInt(txtId.getText()));
+                
+                 patmt.setString(5,txtLogin.getText().trim());
+                 patmt.setString(6,txtSenha.getText().trim());
+                 patmt.setInt(7,Integer.parseInt(txtId.getText()));
                 patmt.execute();
 
-                JOptionPane.showMessageDialog(null, "Updatado com sucesso");
+                JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
 
                 txtId.setText("");
 
-                txtCodAge.setText("");
+                txtLogin.setText("");
                 txtSituacao.setText("");
                 txtNome.setText("");
                 txtSobrenome.setText("");
+                txtSenha.setText("");
 
 
             }
@@ -412,9 +436,13 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSobrenomeActionPerformed
 
-    private void txtCodAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodAgeActionPerformed
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodAgeActionPerformed
+    }//GEN-LAST:event_txtLoginActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -459,6 +487,7 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -467,10 +496,11 @@ public class frmEditarUsuOn extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField txtCodAge;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtIdFuncionarioBusca;
+    private javax.swing.JTextField txtLogin;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtSenha;
     private javax.swing.JTextField txtSituacao;
     private javax.swing.JTextField txtSobrenome;
     // End of variables declaration//GEN-END:variables
