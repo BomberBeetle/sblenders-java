@@ -56,7 +56,7 @@ public class pnRestauranteEstatistica extends javax.swing.JPanel {
 
         jButton7.setBackground(new java.awt.Color(247, 176, 54));
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton7.setText("Média");
+        jButton7.setText("Funcionarios Por Restaurante");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,19 +69,20 @@ public class pnRestauranteEstatistica extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -117,7 +118,33 @@ public class pnRestauranteEstatistica extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+      try {
+            ClasseConexaoJava con = new  ClasseConexaoJava();
+            boolean resultado = con.conectar();
+        if (resultado == true){
+            JasperDesign jdesign = JRXmlLoader.load(getClass().getResource("funcPRes.jrxml").getPath());
+            String query = "SELECT\n" +
+"	tbRest.restauranteID as \"ID do Restaurante\",\n" +
+"        tbRest.restauranteNome as \"Nome do Restaurante\",\n" +
+"	COUNT(funcionarioId) as \"Número de Funcionarios\"\n" +
+"FROM tbFuncionario AS tbFunc JOIN tbRestaurante AS tbRest\n" +
+"	ON tbFunc.restauranteID = tbRest.restauranteID\n" +
+"GROUP BY tbRest.restauranteID, tbRest.restauranteNome\n" +
+"ORDER BY tbRest.restauranteID ASC";
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jdesign.setQuery(updateQuery);
+            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
+            JasperViewer.viewReport(jprint, false);
+            /*
+            JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
+            JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");
+            */
+        }
+        } catch (JRException ex) {
+            Logger.getLogger(pnMenufunc.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_jButton7ActionPerformed
 
 

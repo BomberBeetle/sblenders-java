@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ed562057-8761-4b16-899a-7db40d52657a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+	tbRest.restauranteID as "ID do Restaurante",
+        tbRest.restauranteNome as "Nome do Restaurante",
+	COUNT(funcionarioId) as "Número de Funcionarios"
+FROM tbFuncionario AS tbFunc JOIN tbRestaurante AS tbRest
+	ON tbFunc.restauranteID = tbRest.restauranteID
+GROUP BY tbRest.restauranteID, tbRest.restauranteNome
+ORDER BY tbRest.restauranteID ASC]]>
+	</queryString>
+	<field name="ID do Restaurante" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID do Restaurante"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID do Restaurante"/>
+	</field>
+	<field name="Nome do Restaurante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nome do Restaurante"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nome do Restaurante"/>
+	</field>
+	<field name="Número de Funcionarios" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Número de Funcionarios"/>
+		<property name="com.jaspersoft.studio.field.label" value="Número de Funcionarios"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="10" width="250" height="30" uuid="fea27e5f-8fb2-4751-b425-20565380966b"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Funcionarios por restaurante]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="328" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="40" width="550" height="270" uuid="a575fe06-b59a-4efc-8648-65a88e90ff06"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Nome do Restaurante}]]></seriesExpression>
+						<categoryExpression><![CDATA["numero de funcionarios"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Número de Funcionarios}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

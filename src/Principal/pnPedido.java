@@ -5,6 +5,19 @@
  */
 package Principal;
 
+import classeConexao.ClasseConexaoJava;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 /**
  *
  * @author lucas
@@ -33,7 +46,7 @@ public class pnPedido extends javax.swing.JPanel {
 
         jButton6.setBackground(new java.awt.Color(247, 176, 54));
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton6.setText("Últimos");
+        jButton6.setText("produtos mais pedidos");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,7 +70,43 @@ public class pnPedido extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    
+try {
+            ClasseConexaoJava con = new  ClasseConexaoJava();
+            boolean resultado = con.conectar();
+        if (resultado == true){
+            JasperDesign jdesign = JRXmlLoader.load(getClass().getResource("MaisProdutos.jrxml").getPath());
+           String query = "SELECT\n" +
+"	restauranteNome,\n" +
+"	produtoNome,\n" +
+"	tbProd.produtoID,\n" +
+"	COUNT(tbPedProd.produtoID) AS \"Número de pedidos em que aparece\"\n" +
+"FROM tbProduto AS tbProd\n" +
+"JOIN tbPedidoProduto AS tbPedProd\n" +
+"ON tbProd.produtoID = tbPedProd.produtoID\n" +
+"JOIN tbPedido AS tbPed\n" +
+"ON tbPedProd.pedidoID = tbPed.pedidoID\n" +
+"JOIN tbRestaurante AS tbRest\n" +
+"ON tbPed.restauranteID = tbRest.restauranteID\n" +
+"WHERE tbProd.produtoID IN (SELECT produtoID FROM tbPedidoProduto)\n" +
+"GROUP BY\n" +
+"	restauranteNome,\n" +
+"	produtoNome,\n" +
+"	tbProd.produtoID\n" +
+"ORDER BY produtoID ASC ";
+            JRDesignQuery updateQuery = new JRDesignQuery();
+            updateQuery.setText(query);
+            jdesign.setQuery(updateQuery);
+            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, con.getConn());
+            JasperViewer.viewReport(jprint, false);
+            /*
+            JasperReport jasperReport = JasperCompileManager.compileReport(jdesign);
+            JRSaver.saveObject(jasperReport, "MyCompiledReport.jasper");
+            */
+        }
+        } catch (JRException ex) {
+            Logger.getLogger(pnMenufunc.class.getName()).log(Level.SEVERE, null, ex);
+        }     
     }//GEN-LAST:event_jButton6ActionPerformed
 
 

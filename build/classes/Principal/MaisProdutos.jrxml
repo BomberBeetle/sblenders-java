@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MaisProdutos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5dac5ebd-e8f8-4e9e-a8f9-3b2de766e46f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+	restauranteNome,
+	produtoNome,
+	tbProd.produtoID,
+	COUNT(tbPedProd.produtoID) AS "Número de pedidos em que aparece"
+FROM tbProduto AS tbProd
+JOIN tbPedidoProduto AS tbPedProd
+ON tbProd.produtoID = tbPedProd.produtoID
+JOIN tbPedido AS tbPed
+ON tbPedProd.pedidoID = tbPed.pedidoID
+JOIN tbRestaurante AS tbRest
+ON tbPed.restauranteID = tbRest.restauranteID
+WHERE tbProd.produtoID IN (SELECT produtoID FROM tbPedidoProduto)
+GROUP BY
+	restauranteNome,
+	produtoNome,
+	tbProd.produtoID
+ORDER BY produtoID ASC]]>
+	</queryString>
+	<field name="restauranteNome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="restauranteNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="restauranteNome"/>
+	</field>
+	<field name="produtoNome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="produtoNome"/>
+		<property name="com.jaspersoft.studio.field.label" value="produtoNome"/>
+	</field>
+	<field name="produtoID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="produtoID"/>
+		<property name="com.jaspersoft.studio.field.label" value="produtoID"/>
+	</field>
+	<field name="Número de pedidos em que aparece" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Número de pedidos em que aparece"/>
+		<property name="com.jaspersoft.studio.field.label" value="Número de pedidos em que aparece"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="10" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="2" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="325" splitType="Stretch">
+			<lineChart>
+				<chart evaluationTime="Report">
+					<reportElement x="10" y="12" width="550" height="300" uuid="6c1897d9-5974-4801-a12c-371be50301dd"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{restauranteNome}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{produtoNome}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Número de pedidos em que aparece}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</summary>
+</jasperReport>
