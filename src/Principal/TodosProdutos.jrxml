@@ -94,13 +94,7 @@
 					<text><![CDATA[ID]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="44" y="0" width="30" height="15" uuid="7fc404e9-6c21-449a-b008-4cb24855bb33">
-						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c249a84a-6ee4-43a1-b7a1-149d9a7c5c3e"/>
-					</reportElement>
-					<text><![CDATA[catID]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="Column header" x="100" y="0" width="124" height="15" uuid="2b955a14-a186-4ab9-90a0-ee373a7a55c9">
+					<reportElement style="Column header" x="60" y="0" width="124" height="15" uuid="2b955a14-a186-4ab9-90a0-ee373a7a55c9">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3ddcd3b-33b6-486e-8703-e0bcb8ad68cc"/>
 					</reportElement>
 					<text><![CDATA[Nome]]></text>
@@ -131,13 +125,7 @@
 					<textFieldExpression><![CDATA[$F{produtoID}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="44" y="0" width="30" height="15" uuid="6409f771-bb01-4b78-861b-3266edf30990">
-						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c249a84a-6ee4-43a1-b7a1-149d9a7c5c3e"/>
-					</reportElement>
-					<textFieldExpression><![CDATA[$F{categoriaProdutoID}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement style="Detail" x="100" y="0" width="124" height="15" uuid="57f2602e-6a4e-4b86-bde8-99a1edd99b61">
+					<reportElement style="Detail" x="60" y="-1" width="124" height="15" uuid="57f2602e-6a4e-4b86-bde8-99a1edd99b61">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3ddcd3b-33b6-486e-8703-e0bcb8ad68cc"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{produtoNome}]]></textFieldExpression>

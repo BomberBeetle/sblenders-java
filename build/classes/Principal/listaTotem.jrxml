@@ -91,7 +91,7 @@ join tbRestaurante AS tbRest ON tbT.restauranteID = tbRest.restauranteID]]>
 					<text><![CDATA[totemID]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" mode="Opaque" x="152" y="0" width="152" height="21" backcolor="#F7B037" uuid="56ca7de9-2a26-4d9e-a75f-1f7065e202f9">
+					<reportElement style="Column header" mode="Opaque" x="152" y="0" width="128" height="21" backcolor="#F7B037" uuid="56ca7de9-2a26-4d9e-a75f-1f7065e202f9">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7765cb00-2bff-403a-a887-713f73bc0287"/>
 					</reportElement>
 					<textElement>
@@ -100,13 +100,13 @@ join tbRestaurante AS tbRest ON tbT.restauranteID = tbRest.restauranteID]]>
 					<text><![CDATA[Login]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Detail" mode="Opaque" x="300" y="0" width="158" height="21" forecolor="#FFFFFF" backcolor="#F7B037" uuid="bc99bf0f-12ee-4d96-bd30-6c845a5232ac">
+					<reportElement style="Detail" mode="Opaque" x="280" y="0" width="178" height="21" forecolor="#FFFFFF" backcolor="#F7B037" uuid="bc99bf0f-12ee-4d96-bd30-6c845a5232ac">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c227d2b-bb2d-47b6-b252-98fea6c862c1"/>
 					</reportElement>
 					<textElement>
 						<font size="16" isBold="true"/>
 					</textElement>
-					<text><![CDATA[restaurante nome]]></text>
+					<text><![CDATA[Nome do Restaurante]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -134,7 +134,7 @@ join tbRestaurante AS tbRest ON tbT.restauranteID = tbRest.restauranteID]]>
 					<textFieldExpression><![CDATA[$F{Login}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="304" y="0" width="152" height="20" uuid="8124afc7-f065-4967-adb4-02542b00e7db">
+					<reportElement style="Detail" x="280" y="0" width="152" height="20" uuid="8124afc7-f065-4967-adb4-02542b00e7db">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c227d2b-bb2d-47b6-b252-98fea6c862c1"/>
 					</reportElement>
 					<textElement>

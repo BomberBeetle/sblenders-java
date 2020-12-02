@@ -232,7 +232,7 @@ public class FormLogin extends javax.swing.JFrame
             }
         }
         else{
-            JOptionPane.showMessageDialog(null, "Consulta a tablea falhou");
+            JOptionPane.showMessageDialog(null, "Consulta a tabela falhou");
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 

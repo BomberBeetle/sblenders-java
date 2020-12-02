@@ -55,7 +55,7 @@ classeGetSet abc = new classeGetSet();
         btnRestauranteEstatisticas = new javax.swing.JButton();
         btnIngredientes = new javax.swing.JButton();
         pnConteudo = new javax.swing.JPanel();
-        btnPedido = new javax.swing.JButton();
+        lblMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -357,27 +357,8 @@ classeGetSet abc = new classeGetSet();
         pnConteudo.setLayout(new java.awt.CardLayout());
         jPanel3.add(pnConteudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 810, 340));
 
-        btnPedido.setBackground(new java.awt.Color(255, 255, 255));
-        btnPedido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnPedido.setForeground(new java.awt.Color(255, 255, 255));
-        btnPedido.setActionCommand("");
-        btnPedido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnPedido.setBorderPainted(false);
-        btnPedido.setEnabled(false);
-        btnPedido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnPedidoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnPedidoMouseExited(evt);
-            }
-        });
-        btnPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPedidoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 180, 39));
+        lblMenu.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jPanel3.add(lblMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 400, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -393,16 +374,9 @@ classeGetSet abc = new classeGetSet();
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoActionPerformed
-           pnPedido painel = new pnPedido();
-         pnConteudo.removeAll();
-                pnConteudo.add(painel);
-                pnConteudo.revalidate();
-                pnConteudo.setVisible(true);
-    }//GEN-LAST:event_btnPedidoActionPerformed
-
     private void btnPedidoEstatiscasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoEstatiscasActionPerformed
-      pnPedidoEstatistica painel = new pnPedidoEstatistica();
+ lblMenu.setText("Estatísticas");
+        pnPedidoEstatistica painel = new pnPedidoEstatistica();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
                 pnConteudo.revalidate();
@@ -410,7 +384,8 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnPedidoEstatiscasActionPerformed
 
     private void btnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutoActionPerformed
-         pnProduto painel = new pnProduto();
+        lblMenu.setText("Produto");
+        pnProduto painel = new pnProduto();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
                 pnConteudo.revalidate();
@@ -430,7 +405,8 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnFuncionarioMouseExited
 
     private void btnRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestauranteActionPerformed
-       pnRestaurante painel = new pnRestaurante();
+lblMenu.setText("Restaurante");
+        pnRestaurante painel = new pnRestaurante();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
                 pnConteudo.revalidate();
@@ -438,6 +414,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnRestauranteActionPerformed
 
     private void btnRestauranteEstatisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestauranteEstatisticasActionPerformed
+lblMenu.setText("Estatísticas");
         pnRestauranteEstatistica painel = new pnRestauranteEstatistica();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
@@ -446,6 +423,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnRestauranteEstatisticasActionPerformed
 
     private void btnIngredientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngredientesActionPerformed
+lblMenu.setText("Ingrediente");
         pnIngredientes painel = new pnIngredientes();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
@@ -468,14 +446,6 @@ classeGetSet abc = new classeGetSet();
     private void btnClienteOnlineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteOnlineMouseExited
        btnClienteOnline.setBackground(new java.awt.Color(204,204,204));
     }//GEN-LAST:event_btnClienteOnlineMouseExited
-
-    private void btnPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMouseEntered
-        btnPedido.setBackground(new java.awt.Color(247,176,54));
-    }//GEN-LAST:event_btnPedidoMouseEntered
-
-    private void btnPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMouseExited
-      btnPedido.setBackground(new java.awt.Color(204,204,204));
-    }//GEN-LAST:event_btnPedidoMouseExited
 
     private void btnPedidoEstatiscasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoEstatiscasMouseEntered
         btnPedidoEstatiscas.setBackground(new java.awt.Color(247,176,54));
@@ -526,7 +496,9 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnSairMouseExited
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
-       pnMenufunc painel = new pnMenufunc();
+        lblMenu.setText("Funcionário");
+        
+        pnMenufunc painel = new pnMenufunc();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
                 pnConteudo.revalidate();
@@ -545,7 +517,7 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_formWindowOpened
 
     private void btnTotemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotemActionPerformed
-        
+         lblMenu.setText("Totem");
          pnMenuTotem painel = new pnMenuTotem();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
@@ -556,7 +528,8 @@ classeGetSet abc = new classeGetSet();
     }//GEN-LAST:event_btnTotemActionPerformed
 
     private void btnClienteOnlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteOnlineActionPerformed
-         pnMenuClienteOnline painel = new pnMenuClienteOnline();
+ lblMenu.setText("Cliente Online");
+        pnMenuClienteOnline painel = new pnMenuClienteOnline();
          pnConteudo.removeAll();
                 pnConteudo.add(painel);
                 pnConteudo.revalidate();
@@ -602,7 +575,6 @@ classeGetSet abc = new classeGetSet();
     private javax.swing.JButton btnClienteOnline;
     private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnIngredientes;
-    private javax.swing.JButton btnPedido;
     private javax.swing.JButton btnPedidoEstatiscas;
     private javax.swing.JButton btnProduto;
     private javax.swing.JButton btnRestaurante;
@@ -618,6 +590,7 @@ classeGetSet abc = new classeGetSet();
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblBemVindo;
     private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblMenu;
     private javax.swing.JPanel pnConteudo;
     // End of variables declaration//GEN-END:variables
 }

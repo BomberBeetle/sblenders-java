@@ -69,7 +69,7 @@ public class pnRestaurante extends javax.swing.JPanel {
 
         jButton9.setBackground(new java.awt.Color(247, 176, 54));
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton9.setText("Listas Restaurantes");
+        jButton9.setText("Listar Restaurantes");
         jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

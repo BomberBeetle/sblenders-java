@@ -105,7 +105,7 @@ GROUP BY
 					<textElement>
 						<font size="10"/>
 					</textElement>
-					<text><![CDATA[ID]]></text>
+					<text><![CDATA[ID produto]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="60" y="0" width="110" height="15" uuid="1bbccd4a-f800-4d86-ba7e-807bf9fd6b36">
@@ -114,7 +114,7 @@ GROUP BY
 					<textElement>
 						<font size="10"/>
 					</textElement>
-					<text><![CDATA[Nome produto]]></text>
+					<text><![CDATA[Nome do produto]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="170" y="0" width="150" height="21" uuid="49142979-fb3a-4dec-8661-0c73c98f42cd">
@@ -123,7 +123,7 @@ GROUP BY
 					<textElement>
 						<font size="10"/>
 					</textElement>
-					<text><![CDATA[pedidos em que aparece]]></text>
+					<text><![CDATA[Pedidos em que aparece]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="320" y="0" width="104" height="15" uuid="5b57dd7f-a35a-4192-b46b-e29da811bd53">
@@ -132,7 +132,7 @@ GROUP BY
 					<textElement>
 						<font size="10"/>
 					</textElement>
-					<text><![CDATA[ingredienteNome]]></text>
+					<text><![CDATA[Nome do Ingrediente]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="424" y="0" width="130" height="21" uuid="ee31a1b6-a13a-480b-a5fd-86de9a190958">
@@ -141,7 +141,7 @@ GROUP BY
 					<textElement>
 						<font size="10"/>
 					</textElement>
-					<text><![CDATA[quantidade que aparece]]></text>
+					<text><![CDATA[Quantidade que aparece]]></text>
 				</staticText>
 			</frame>
 		</band>

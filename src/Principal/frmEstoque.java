@@ -74,7 +74,7 @@ public class frmEstoque extends javax.swing.JFrame {
 
         Add.setBackground(new java.awt.Color(247, 176, 54));
         Add.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Add.setText("alterar existente");
+        Add.setText("Alterar existente");
         Add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +94,7 @@ public class frmEstoque extends javax.swing.JFrame {
 
         btnBuscar.setBackground(new java.awt.Color(247, 176, 54));
         btnBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnBuscar.setText("buscar");
+        btnBuscar.setText("Buscar");
         btnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class frmEstoque extends javax.swing.JFrame {
 
         Add1.setBackground(new java.awt.Color(247, 176, 54));
         Add1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Add1.setText("adicionar novo");
+        Add1.setText("Adicionar novo");
         Add1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Add1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +121,7 @@ public class frmEstoque extends javax.swing.JFrame {
 
         gerar.setBackground(new java.awt.Color(247, 176, 54));
         gerar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        gerar.setText("gerar tabela estoque");
+        gerar.setText("Gerar tabela estoque");
         gerar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,10 +177,11 @@ public class frmEstoque extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Add1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gerar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Add1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(gerar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(22, 22, 22))
         );
 
@@ -345,7 +346,7 @@ public class frmEstoque extends javax.swing.JFrame {
                 patmt.execute();
                 patmt.close();
                 // con.desconectar();
-                JOptionPane.showMessageDialog(null, "Novo Restaurante Cadastrado");
+                JOptionPane.showMessageDialog(null, "Novo adicionado");
               
             }
             catch (Exception erro){

@@ -84,13 +84,13 @@
 			<frame>
 				<reportElement mode="Opaque" x="46" y="5" width="458" height="20" backcolor="#F7B037" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
 				<staticText>
-					<reportElement style="Column header" x="0" y="0" width="114" height="15" uuid="b2832c36-4a68-4777-b7ce-1a1ab8f7f28a">
+					<reportElement style="Column header" x="0" y="0" width="60" height="15" uuid="b2832c36-4a68-4777-b7ce-1a1ab8f7f28a">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3f1cce66-3c2f-435f-beba-a6a761acda3c"/>
 					</reportElement>
 					<text><![CDATA[ID]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="114" y="0" width="114" height="15" uuid="9b572a05-f7d7-413f-bd90-83cb36113120">
+					<reportElement style="Column header" x="60" y="0" width="168" height="15" uuid="9b572a05-f7d7-413f-bd90-83cb36113120">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97de0029-e87b-4dc0-a04d-0bac06efd3ff"/>
 					</reportElement>
 					<text><![CDATA[Nome]]></text>
@@ -115,13 +115,13 @@
 			<frame>
 				<reportElement x="46" y="1" width="458" height="15" uuid="5d75be3e-ea39-4b96-baf8-b49497315044"/>
 				<textField>
-					<reportElement style="Detail" x="0" y="0" width="114" height="15" uuid="94b48dba-d3a2-4f50-9c9e-675fca808eca">
+					<reportElement style="Detail" x="0" y="0" width="60" height="15" uuid="94b48dba-d3a2-4f50-9c9e-675fca808eca">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3f1cce66-3c2f-435f-beba-a6a761acda3c"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{restauranteID}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="114" y="0" width="114" height="15" uuid="ce4fa296-ba7f-4305-883a-a85c4e481838">
+					<reportElement style="Detail" x="60" y="0" width="168" height="15" uuid="ce4fa296-ba7f-4305-883a-a85c4e481838">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97de0029-e87b-4dc0-a04d-0bac06efd3ff"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{restauranteNome}]]></textFieldExpression>

@@ -100,7 +100,7 @@ public class FrmInfoNutri extends javax.swing.JFrame {
         jLabel8.setText("Valor nutrição*");
 
         Add.setBackground(new java.awt.Color(247, 176, 54));
-        Add.setText("adicionar");
+        Add.setText("Adicionar");
         Add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +121,7 @@ public class FrmInfoNutri extends javax.swing.JFrame {
         jLabel2.setText("O nome do produto é:");
 
         btnBuscar.setBackground(new java.awt.Color(247, 176, 54));
-        btnBuscar.setText("buscar");
+        btnBuscar.setText("Buscar");
         btnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +132,7 @@ public class FrmInfoNutri extends javax.swing.JFrame {
         lblNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         Add1.setBackground(new java.awt.Color(247, 176, 54));
-        Add1.setText("gerar tabela de nutrição");
+        Add1.setText("Gerar tabela de nutrição");
         Add1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Add1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,7 +261,7 @@ ClasseConexaoJava con;
                   }
                 
               
-               JOptionPane.showMessageDialog(null,"funcionário buscado");
+               JOptionPane.showMessageDialog(null,"Produto buscado");
                patmt.close();
                con.desconectar();
               
