@@ -73,23 +73,32 @@ join tbIngrediente as tbIng on tbEi.ingredienteID = tbIng.ingredienteID]]>
 	<columnHeader>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="97" y="5" width="458" height="20" backcolor="#F7B037" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
+				<reportElement mode="Opaque" x="22" y="5" width="532" height="20" backcolor="#F7B037" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
 				<staticText>
 					<reportElement style="Column header" x="0" y="0" width="152" height="15" uuid="a15f39ae-241c-440e-9448-23b2830f43e3">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c8864609-7146-4a49-9dd1-05c2888fbb5c"/>
 					</reportElement>
+					<textElement>
+						<font size="12"/>
+					</textElement>
 					<text><![CDATA[Nome do Restaurante]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" x="152" y="0" width="152" height="15" uuid="9eb8c329-70d4-48c5-8733-c727d6cf3e2c">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d47fb5e4-3b42-4a16-8b4c-54503648e126"/>
 					</reportElement>
+					<textElement>
+						<font size="12"/>
+					</textElement>
 					<text><![CDATA[nome ingrediente]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="304" y="0" width="152" height="15" uuid="22737869-2080-49ec-888a-4b2770237e42">
+					<reportElement style="Column header" x="320" y="0" width="166" height="15" uuid="22737869-2080-49ec-888a-4b2770237e42">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47a5d370-b1e6-4c44-84b2-f64b03905ef6"/>
 					</reportElement>
+					<textElement>
+						<font size="12"/>
+					</textElement>
 					<text><![CDATA[Quantidade estoque]]></text>
 				</staticText>
 			</frame>
@@ -100,26 +109,26 @@ join tbIngrediente as tbIng on tbEi.ingredienteID = tbIng.ingredienteID]]>
 			<frame>
 				<reportElement x="97" y="1" width="458" height="15" uuid="5d75be3e-ea39-4b96-baf8-b49497315044"/>
 				<textField>
-					<reportElement style="Detail" x="0" y="0" width="152" height="15" uuid="b778700c-127d-4d70-afe4-b377bb30065a">
+					<reportElement style="Detail" x="-75" y="0" width="152" height="15" uuid="b778700c-127d-4d70-afe4-b377bb30065a">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c8864609-7146-4a49-9dd1-05c2888fbb5c"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{Nome do Restaurante}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="152" y="0" width="152" height="15" uuid="322ffc52-c179-4158-aff8-07e37fdef717">
+					<reportElement style="Detail" x="77" y="0" width="152" height="15" uuid="322ffc52-c179-4158-aff8-07e37fdef717">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d47fb5e4-3b42-4a16-8b4c-54503648e126"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{nome ingrediente}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Detail" x="304" y="0" width="152" height="15" uuid="e963c8c1-20df-43b6-a9bd-ce968ac7eb24">
+					<reportElement style="Detail" x="250" y="0" width="90" height="15" uuid="e963c8c1-20df-43b6-a9bd-ce968ac7eb24">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47a5d370-b1e6-4c44-84b2-f64b03905ef6"/>
 					</reportElement>
 					<textFieldExpression><![CDATA[$F{Quantidade estoque}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="458" height="1" uuid="2b97af27-2a1e-491f-a0f4-b2549a3510ee"/>
+				<reportElement positionType="FixRelativeToBottom" x="22" y="16" width="533" height="1" uuid="2b97af27-2a1e-491f-a0f4-b2549a3510ee"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>

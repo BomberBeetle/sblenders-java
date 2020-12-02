@@ -88,7 +88,7 @@ join tbRestaurante AS tbRest ON tbT.restauranteID = tbRest.restauranteID]]>
 					<textElement>
 						<font size="16"/>
 					</textElement>
-					<text><![CDATA[totemID]]></text>
+					<text><![CDATA[Id totem]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="Column header" mode="Opaque" x="152" y="0" width="128" height="21" backcolor="#F7B037" uuid="56ca7de9-2a26-4d9e-a75f-1f7065e202f9">

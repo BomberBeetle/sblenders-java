@@ -15,6 +15,8 @@ import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import org.graalvm.compiler.lir.hashing.Hasher;
 import sun.awt.image.ToolkitImage;
 /**
  *
@@ -336,28 +339,29 @@ public class frmCadFuncionario extends javax.swing.JFrame {
     String caminhoImagem;
     
     ImageIcon Imagem;
-
+//Hashe hhh ;
     
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-     
+    // hhh = new Hashe();
          Imagem = (ImageIcon) lblImagens.getIcon();
         Image image = Imagem.getImage();
       BufferedImage ImagemBuderizada = ((ToolkitImage) image).getBufferedImage();
 //BufferedImage ImagemBuderizada = image.getBufferedImage();
         
         tipoFuncionario tipo = (tipoFuncionario) jComboBox1.getSelectedItem();
+        
        con = new ClasseConexaoJava();
            boolean resultado = con.conectar();
         if (resultado == true ){
            
-           
-            try{
+        //   Hasher.hash(txtSenhaFunc.getText(), 00);
+            
                 try (
                         PreparedStatement patmt = con.getConn().prepareStatement("INSERT INTO tbAgente(tipoAgenteID, agenteLogin, agenteSenha, agenteSalt) VALUES(2,? , ?, '0000000000000000000000000000000000000000000000000000000000000000')  INSERT INTO tbFuncionario(tipoFuncionarioID, agenteID, funcionarioNome, funcionarioRG, restauranteID, funcionarioSituacao) values ( ?, (select agenteId from tbAgente where agenteLogin =? and agentesenha = ?), ?,? , ?, 1)" 
                         
                         + " UPDATE tbFuncionario SET funcionarioFoto = ? WHERE funcionarioRG = ?  "      )) {
                     patmt.setString(1,txtIdFunc.getText().trim());
-                    patmt.setString(2,txtSenhaFunc.getText().trim());
+                    patmt.setString(2, txtSenhaFunc.getText().trim());
                     patmt.setInt(3,tipo.getIdFunc());
                     patmt.setString(4,txtIdFunc.getText().trim());
                     patmt.setString(5,txtSenhaFunc.getText().trim());
@@ -369,7 +373,6 @@ public class frmCadFuncionario extends javax.swing.JFrame {
                     patmt.setBytes(9,ManipularImagem.getImgBytes(ImagemBuderizada));
                     patmt.setString(10,(txtRgFunc.getText().trim()));
                     patmt.execute();
-                }
               // con.desconectar();
                 JOptionPane.showMessageDialog(null, "Novo funcionário cadastrado");
             }
